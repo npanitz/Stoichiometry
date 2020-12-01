@@ -1,38 +1,130 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(104, 103, 102, 0.637);
+}
+
+.create-reagent {
+  width: 100px;
+  height: 100px;
+  background-color: grey;
+}
+
+.button {
+  float: left;
+  cursor: pointer;
+  font-size: 15px;
+  background-color: #d1814077;
+  width: 100px;
+  height: 35px;
+  line-height: 30px;
   text-align: center;
+  margin: 5px;
+  border-radius: 5px;
+  padding-right: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.button:hover {
+  background-color: #c95b2877;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.submit {
+  margin-top: 1px !important;
+  margin: 0;
+  width: 100px;
+  position: relative;
+  line-height: 20px;
+  background-color: grey;
+  height: 25px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.results {
+  float: right;
+  margin-right: 1%;
+}
+.reagent {
+  display: grid;
+  width: 100px;
+  margin-left: 5px;
+  grid-template-rows: auto auto auto;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.reagent-grid {
+  background-color: rgba(52, 107, 107, 0.63);
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.reagent-input {
+  height: 20px;
+  margin: 10px;
+  width: 80px;
+  border-radius: 5px;
+  left: 0;
+}
+
+.reagent-label {
+  font-size: 14px;
+  height: 10px;
+  float: left;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.reagent-entry {
+  background-color: rgba(124, 81, 126, 0.425);
+  width: 100px;
+  display: inline;
+  border: solid;
+  border-radius: 10px;
+}
+
+.split {
+  height: 100%;
+  width: 49.2%;
+  position: fixed;
+  z-index: 1;
+  top: 10%;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.top {
+  top: 11%;
+  position: fixed;
+  border-radius: 10px;
+  width: 47.9%;
+  height: 43%;
+  overflow-y: hidden;
+}
+
+.bottom {
+  bottom: 2.5% !important;
+  position: fixed;
+  border-radius: 10px;
+  width: 47.9%;
+  height: 44%;
+  overflow-y: hidden;
+}
+/* Control the left side */
+.left {
+  left: 1%;
+  border: ridge;
+  border-width: 8px;
+  border-radius: 15px;
+  height: 89%;
+}
+
+/* Control the right side */
+.right {
+  right: 1%;
+  border: ridge;
+  border-radius: 15px;
+  border-width: 8px;
+  height: 89%;
 }
