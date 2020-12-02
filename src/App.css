@@ -31,9 +31,10 @@ body {
 }
 
 .submit {
-  margin-top: 1px !important;
+  margin-top: 1px;
   margin: 0;
-  width: 100px;
+  margin-left: 10%;
+  width: 80px;
   position: relative;
   line-height: 25px;
   background-color: grey;
@@ -47,13 +48,14 @@ body {
 }
 .reagent {
   display: grid;
-  width: 100px;
+  width: 115px;
   margin-left: 5px;
   grid-template-rows: auto auto auto;
   text-align: center;
   line-height: 15px;
   font-size: 14px;
   border-radius: 5px;
+  border-right: ridge;
 }
 
 .reagent-grid {
@@ -63,29 +65,36 @@ body {
 }
 
 .reagent-input {
+  align-self: bottom;
   height: 20px;
   margin: 10px;
-  width: 80px;
+  width: 60px;
   border-radius: 5px;
-  margin-left: 5px !important;
+  align-self: center;
+  position: relative;
+  bottom: 3px !important;
 }
 
 .title {
-  line-height: 20px;
-  font-size: 20px;
+  line-height: 18px;
+  font-size: 22px;
+  margin-bottom: 0px;
+  text-align: center;
+  margin-left: -5px;
 }
 
 .reagent-label {
-  font-size: 13px;
+  font-size: 16px;
   height: 10px;
-  float: left;
   margin-left: 5px;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .reagent-entry {
+  margin-left: 10%;
   background-color: rgba(124, 81, 126, 0.425);
-  width: 102px;
+  width: 80px;
+  height: 70px;
   display: inline;
   border: solid;
   border-radius: 10px;
@@ -106,7 +115,7 @@ body {
   position: fixed;
   border-radius: 10px;
   width: 47.9%;
-  height: 43%;
+  height: 48%;
   overflow-y: hidden;
 }
 
@@ -115,7 +124,7 @@ body {
   position: fixed;
   border-radius: 10px;
   width: 47.9%;
-  height: 44%;
+  height: 38%;
   overflow-y: hidden;
 }
 /* Control the left side */

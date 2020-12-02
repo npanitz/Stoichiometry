@@ -3,7 +3,7 @@ import "./App.css";
 import NewReagent from "./components/NewReagent";
 import Button from "./components/Button";
 import ReagentGrid from "./components/ReagentGrid";
-// import NewResult from "./components/NewResult";
+import NewResult from "./components/NewResult";
 
 class App extends React.Component {
   constructor(props) {
@@ -46,9 +46,37 @@ class App extends React.Component {
     });
   }
   results() {
-    console.log("Solid Multipliers: ", this.state.solidMultipliers);
-    console.log("Liquid Multipliers: ", this.state.liquidMultipliers);
-    console.log("template moles: ", this.state.templateMoles);
+    const templateRatio = this.state.templateMoles / this.state.startingMoles;
+    const newSolidMoles = this.state.solidMultipliers.map((multiplier) => {
+      return multiplier * templateRatio;
+    });
+    const newLiquidMoles = this.state.liquidMultipliers.map((multiplier) => {
+      return multiplier * templateRatio;
+    });
+    console.log("new Solid Moles: ", newSolidMoles);
+    console.log("new Liquid Moles: ", newLiquidMoles);
+  }
+
+  newResult(phase) {
+    const newPhase = phase === "solid" ? "Solid " : "Liquid ";
+    const newCount = this.state[`${phase}Count`] + 1;
+    const newTitle = newPhase + "Reagent " + newCount;
+    this.setState({
+      moleKeys: [...this.state.moleKeys, newTitle],
+      [`${phase}Count`]: this.state[`${phase}Count`] + 1,
+      [`${phase}Reagents`]: [
+        ...this.state[`${phase}Reagents`],
+        [
+          phase + (this.state[`${phase}Count`] + 1),
+          <NewReagent
+            key={`${phase}${this.state[`${phase}Count`] + 1} container`}
+            phase={phase}
+            count={this.state[`${phase}Count`]}
+            onFormSubmit={this.onFormSubmit}
+          />,
+        ],
+      ],
+    });
   }
 
   newReagent(phase) {
@@ -78,10 +106,12 @@ class App extends React.Component {
       ev.target.childNodes[0].parentNode.parentElement.childNodes[2]
         .childNodes[0][0].form[0].value
     );
+    console.log(val1);
     const val2 = parseFloat(
       ev.target.childNodes[0].parentNode.parentElement.childNodes[3]
         .childNodes[0][0].form[0].value
     );
+    console.log(val2);
     this.setState({
       templateMoles: val1 / val2,
     });

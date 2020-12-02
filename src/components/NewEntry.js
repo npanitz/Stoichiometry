@@ -2,7 +2,6 @@ const NewEntry = (props) => {
   return (
     <div className="reagent-entry">
       <form
-        onChange={props.handleChange}
         onSubmit={(e) => {
           e.preventDefault();
         }}
