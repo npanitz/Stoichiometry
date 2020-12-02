@@ -2,7 +2,7 @@ import React from "react";
 
 const NewResult = (key, labelName, inputText) => {
   return (
-    <div className="reagent-entry">
+    <div key={key} className="reagent-entry">
       <form
         onSubmit={(ev) => {
           ev.preventDefault();

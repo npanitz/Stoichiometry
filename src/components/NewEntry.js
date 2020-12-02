@@ -1,6 +1,6 @@
 const NewEntry = (props) => {
   return (
-    <div key={`${props.key}${props.labelName}`} className="reagent-entry">
+    <div className="reagent-entry">
       <form
         onChange={props.handleChange}
         onSubmit={(e) => {
@@ -9,7 +9,7 @@ const NewEntry = (props) => {
       >
         <label className="reagent-label">{props.labelName}: </label>
         <input
-          onClick={() => console.log(props.labelName, props.key)}
+          onClick={() => console.log(props.phase, props.count, props.labelName)}
           type="text"
           className="reagent-input"
         ></input>

@@ -35,9 +35,10 @@ body {
   margin: 0;
   width: 100px;
   position: relative;
-  line-height: 20px;
+  line-height: 25px;
   background-color: grey;
   height: 25px;
+  margin-bottom: 1px;
 }
 
 .results {
@@ -50,7 +51,8 @@ body {
   margin-left: 5px;
   grid-template-rows: auto auto auto;
   text-align: center;
-  font-size: 20px;
+  line-height: 15px;
+  font-size: 14px;
   border-radius: 5px;
 }
 
@@ -65,20 +67,25 @@ body {
   margin: 10px;
   width: 80px;
   border-radius: 5px;
-  left: 0;
+  margin-left: 5px !important;
+}
+
+.title {
+  line-height: 20px;
+  font-size: 20px;
 }
 
 .reagent-label {
-  font-size: 14px;
+  font-size: 13px;
   height: 10px;
   float: left;
-  margin-left: 10px;
+  margin-left: 5px;
   margin-top: 15px;
 }
 
 .reagent-entry {
   background-color: rgba(124, 81, 126, 0.425);
-  width: 100px;
+  width: 102px;
   display: inline;
   border: solid;
   border-radius: 10px;
